@@ -78,11 +78,17 @@ const uploadImage = (req, res, next)=>{
 
 }
 
+const photo = (req, res) => {
+  console.log('HERES THE IMAGE REQ BODY: ', req.body);
+  res.send(req.body);
+}
+
 module.exports = {
     vrHandler: vrHandler,
     translateHandler: translateHandler,
     rerouteHandler: rerouteHandler,
-    uploadImage: uploadImage
+    uploadImage: uploadImage,
+    photo: photo
 }
 
 
