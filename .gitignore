@@ -2,8 +2,10 @@ node_modules/
 
 .vscode/
 
-server/config.js/
+server/config.js
 
 /build
 
 npm-debug.log
+
+config.js
