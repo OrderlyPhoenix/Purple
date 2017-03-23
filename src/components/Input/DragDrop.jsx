@@ -21,7 +21,7 @@ class DragDrop extends Component{
       .send(file)
       .end((err, res)=>{
       //we'll update this once we figure out hosting
-        this.props.changeParentUrl('http://138.197.213.36/' + res.text);
+        this.props.changeParentUrl('http://138.197.213.36:8080/' + res.text);
         this.setState({imgURL: res.text});
       });
   }
