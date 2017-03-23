@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post('/upload', requestHandlers.vrHandler);
 
+router.post('/photo', requestHandlers.photo);
 
 router.use('/img', utility.fileParser.any());
 
