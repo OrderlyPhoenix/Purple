@@ -79,7 +79,7 @@ const uploadImage = (req, res, next)=>{
 }
 
 const photo = (req, res) => {
-  console.log('HERES THE IMAGE REQ BODY: ', req.body);
+  console.log('HERES THE IMAGE REQ: ', req);
   res.send(req.body);
 }
 
