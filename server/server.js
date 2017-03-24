@@ -14,6 +14,10 @@ const jsonParser = bodyParser.json();
 app.use(cors());
 
 app.use(jsonParser);
+app.use(bodyParser.raw({
+  inflate: true,
+  type: 'application/octet-stream'
+}));
 
 app.use(express.static(path.join(__dirname, '../public')));
 
