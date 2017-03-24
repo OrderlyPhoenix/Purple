@@ -87,9 +87,15 @@ const photo = (req, res) => {
     version_date: '2016-05-20'
   });
 
+
   // req.body.parse
 
     // images_file: fs.createReadStream(req.body)
+
+  
+  //JSON.parse(req.body);
+//       images_file: fs.createReadStream(req.body.toString())
+
 
 
   var params = {
