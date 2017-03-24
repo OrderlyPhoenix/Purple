@@ -88,9 +88,11 @@ const photo = (req, res) => {
   });
   
   //JSON.parse(req.body);
+//       images_file: fs.createReadStream(req.body.toString())
+
 
   var params = {
-    images_file: fs.createReadStream(req.body.toString())
+    images_file: req.body
   };
 
   visual_recognition.classify(params, function(err, res) {
