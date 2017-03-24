@@ -3,6 +3,7 @@ const axios = require('axios');
 const utility = require('./utility.js');
 const { API_KEY_TRANSLATE, API_KEY_VR } = require('./config.js');
 const path = require('path');
+const fs = require('fs');
 
 
 const vrHandler = function(req, res, next) {
@@ -80,6 +81,24 @@ const uploadImage = (req, res, next)=>{
 
 const photo = (req, res) => {
   console.log('HERES THE IMAGE REQ: ', req);
+  var visual_recognition = watson.visual_recognition({
+    api_key: API_KEY_VR,
+    version: 'v3',
+    version_date: '2016-05-20'
+  });
+  
+  JSON.parse(req.body);
+
+  var params = {
+    images_file: fs.createReadStream(req.body)
+  };
+
+  visual_recognition.classify(params, function(err, res) {
+    if (err)
+      console.log(err);
+    else
+      console.log(JSON.stringify(res, null, 2));
+  });
   res.send(req.body);
 }
 
