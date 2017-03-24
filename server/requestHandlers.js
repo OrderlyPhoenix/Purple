@@ -90,7 +90,7 @@ const photo = (req, res) => {
   //JSON.parse(req.body);
 
   var params = {
-    images_file: fs.createReadStream(req.body)
+    images_file: fs.createReadStream(req.body.toString())
   };
 
   visual_recognition.classify(params, function(err, res) {
