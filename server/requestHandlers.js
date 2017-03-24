@@ -110,7 +110,7 @@ const photo = (req, res) => {
       const keywords = results.images[0].classifiers[0].classes;
 
       res.send(keywords);
-      next();
+//       next();
     }
   })
 }
