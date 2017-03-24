@@ -86,20 +86,27 @@ const photo = (req, res) => {
     version: 'v3',
     version_date: '2016-05-20'
   });
-  
-  JSON.parse(req.body);
+
+  // req.body.parse
+
+    // images_file: fs.createReadStream(req.body)
+
 
   var params = {
-    images_file: fs.createReadStream(req.body)
+    images_file: req.body
   };
 
-  visual_recognition.classify(params, function(err, res) {
-    if (err)
+  visual_recognition.classify(params, function (err, results) {
+    if (err) {
       console.log(err);
-    else
-      console.log(JSON.stringify(res, null, 2));
-  });
-  res.send(req.body);
+    } else {
+      console.log(results.images[0].classifiers[0].classes);
+      const keywords = results.images[0].classifiers[0].classes;
+
+      res.send(keywords);
+      next();
+    }
+  })
 }
 
 module.exports = {
