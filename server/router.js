@@ -13,7 +13,7 @@ router.use('/img', utility.fileParser.any());
 
 router.post('/img', requestHandlers.uploadImage);
 
-// router.use('/translate', utility.keywordMap);
+router.use('/translate', utility.keywordMap);
 router.post('/translate', requestHandlers.translateHandler);
 
 
