@@ -64,7 +64,6 @@ const translateHandler = (req, res) => {
   // axios.get(url).then((results) => {
   //   res.send(results);
   // })
-
   // res.send(url);
 }
 
@@ -87,15 +86,9 @@ const photo = (req, res) => {
     version_date: '2016-05-20'
   });
 
-
   // req.body.parse
 
     // images_file: fs.createReadStream(req.body)
-
-  
-  //JSON.parse(req.body);
-//       images_file: fs.createReadStream(req.body.toString())
-
 
 
   var params = {
@@ -110,7 +103,7 @@ const photo = (req, res) => {
       const keywords = results.images[0].classifiers[0].classes;
 
       res.send(keywords);
-//       next();
+      // next();
     }
   })
 }
