@@ -43,6 +43,10 @@ const translateHandler = (req, res) => {
   //keyword (word to be translate), source (source language) and target (target language);
   let { keywords, source, target } = req.body;
 
+  keywords = keywords.map((element) => {
+    element.class;
+  });
+
   console.log('keywords are: ', keywords);
   console.log('source is: ', source);
   console.log('target is: ', target);
