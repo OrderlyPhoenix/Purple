@@ -62,6 +62,8 @@ const translateHandler = (req, res) => {
   })
 
   axios.get(url).then((results) => {
+    console.log('RESULTS: ', res);
+     console.log('RESULTS DATA: ', res.data);
     res.send(results.data);
   });
 
