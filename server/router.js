@@ -4,6 +4,8 @@ const utility = require('./utility.js')
 
 const router = express.Router();
 
+router.use('/translate', utility.keywordMap);
+
 router.post('/upload', requestHandlers.vrHandler);
 
 router.post('/photo', requestHandlers.photo);
