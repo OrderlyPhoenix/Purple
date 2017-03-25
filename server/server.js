@@ -16,7 +16,7 @@ app.use(cors());
 app.use(jsonParser);
 app.use(bodyParser.raw({
   inflate: true,
-  limit: '10mb',
+  limit: '100mb',
   type: 'application/octet-stream'
 }));
 
