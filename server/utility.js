@@ -7,6 +7,13 @@ module.exports.isValidUrl = function(url) {
   return url.match(rValidUrl);
 };
 
+module.exports.keywordMap = function(req, res, next) {
+  req.body.keywords.map((element) => {
+    element.class;
+  });
+  next();
+}
+
 const multerStorageTemplate = multer.diskStorage({
   destination: 'public/uploads/',
   filename: (req, file, cb)=>{
