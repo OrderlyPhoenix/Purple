@@ -103,6 +103,7 @@ const photo = (req, res) => {
     if (err) {
       console.log(err);
     } else {
+       console.log("results requestHandler 109" + results);
       console.log(results.images[0].classifiers[0].classes);
       const keywords = results.images[0].classifiers[0].classes;
 
