@@ -8,7 +8,7 @@ module.exports.isValidUrl = function(url) {
 };
 
 module.exports.keywordMap = function(req, res, next) {
-  return req.body.keywords.map((element) => {
+  req.body.keywords = req.body.keywords.map((element) => {
     element.class;
   });
   next();
