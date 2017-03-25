@@ -9,7 +9,7 @@ module.exports.isValidUrl = function(url) {
 
 module.exports.keywordMap = function(req, res, next) {
   req.body.keywords = req.body.keywords.map((element) => {
-    element.class;
+    return element.class;
   });
   next();
 }
